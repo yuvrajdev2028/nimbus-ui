@@ -1,0 +1,49 @@
+:root {
+  /* Colors */
+  --nui-color-primary-50: #eef2ff;
+  --nui-color-primary-100: #e0e7ff;
+  --nui-color-primary-200: #c7d2fe;
+  --nui-color-primary-300: #a5b4fc;
+  --nui-color-primary-400: #818cf8;
+  --nui-color-primary-500: #6366f1;
+  --nui-color-primary-600: #4f46e5;
+  --nui-color-primary-700: #4338ca;
+  --nui-color-primary-800: #3730a3;
+  --nui-color-primary-900: #312e81;
+
+  --nui-color-neutral-50: #f8fafc;
+  --nui-color-neutral-100: #f1f5f9;
+  --nui-color-neutral-200: #e2e8f0;
+  --nui-color-neutral-300: #cbd5e1;
+  --nui-color-neutral-400: #94a3b8;
+  --nui-color-neutral-500: #64748b;
+  --nui-color-neutral-600: #475569;
+  --nui-color-neutral-700: #334155;
+  --nui-color-neutral-800: #1e293b;
+  --nui-color-neutral-900: #0f172a;
+
+  --nui-color-danger-500: #ef4444;
+  --nui-color-success-500: #22c55e;
+  --nui-color-warning-500: #eab308;
+
+  /* Typography */
+  --nui-font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --nui-font-size-sm: 0.875rem;
+  --nui-font-size-base: 1rem;
+  --nui-font-size-lg: 1.125rem;
+  --nui-font-size-xl: 1.25rem;
+
+  /* Spacing */
+  --nui-spacing-1: 0.25rem;
+  --nui-spacing-2: 0.5rem;
+  --nui-spacing-3: 0.75rem;
+  --nui-spacing-4: 1rem;
+  --nui-spacing-6: 1.5rem;
+  --nui-spacing-8: 2rem;
+
+  /* Radius */
+  --nui-radius-sm: 0.125rem;
+  --nui-radius-md: 0.375rem;
+  --nui-radius-lg: 0.5rem;
+  --nui-radius-full: 9999px;
+}

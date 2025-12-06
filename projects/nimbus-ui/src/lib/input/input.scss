@@ -1,0 +1,61 @@
+@import '../styles/tokens';
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.nui-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nui-spacing-1);
+}
+
+.nui-input-label {
+  font-family: var(--nui-font-family-sans);
+  font-size: var(--nui-font-size-sm);
+  font-weight: 500;
+  color: var(--nui-color-neutral-700);
+}
+
+.nui-input {
+  width: 100%;
+  padding: var(--nui-spacing-2) var(--nui-spacing-3);
+  font-family: var(--nui-font-family-sans);
+  font-size: var(--nui-font-size-base);
+  color: var(--nui-color-neutral-900);
+  background-color: white;
+  border: 1px solid var(--nui-color-neutral-300);
+  border-radius: var(--nui-radius-md);
+  outline: none;
+  transition: all 0.2s ease-in-out;
+
+  &::placeholder {
+    color: var(--nui-color-neutral-400);
+  }
+
+  &:focus {
+    border-color: var(--nui-color-primary-500);
+    box-shadow: 0 0 0 2px var(--nui-color-primary-100);
+  }
+
+  &:disabled {
+    background-color: var(--nui-color-neutral-100);
+    cursor: not-allowed;
+  }
+
+  &--error {
+    border-color: var(--nui-color-danger-500);
+
+    &:focus {
+      border-color: var(--nui-color-danger-500);
+      box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+    }
+  }
+}
+
+.nui-input-error {
+  font-family: var(--nui-font-family-sans);
+  font-size: var(--nui-font-size-sm);
+  color: var(--nui-color-danger-500);
+}

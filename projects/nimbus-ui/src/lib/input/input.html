@@ -1,0 +1,20 @@
+<div class="nui-input-wrapper">
+  @if (label) {
+    <label [for]="id" class="nui-input-label">{{ label }}</label>
+  }
+  <input
+    [id]="id"
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+    [class.nui-input--error]="error"
+    class="nui-input"
+    (input)="onInput($event)"
+    (blur)="onBlur()"
+  />
+  @if (error) {
+    <span class="nui-input-error">{{ error }}</span>
+  }
+</div>
+
