@@ -2,75 +2,135 @@
 
 :host {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid transparent;
-  border-radius: var(--nui-radius-md);
-  font-family: var(--nui-font-family-sans);
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
+  vertical-align: middle;
 }
 
 .nui-btn {
+  // Local variables with defaults
+  --btn-bg: transparent;
+  --btn-color: inherit;
+  --btn-border-color: transparent;
+  --btn-padding: 0;
+  --btn-radius: var(--nui-radius-md);
+  --btn-font-size: var(--nui-font-size-base);
+  --btn-font-weight: 500;
+  --btn-hover-bg: transparent;
+  --btn-hover-color: inherit;
+  --btn-hover-border-color: transparent;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  white-space: nowrap;
+  
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border: 1px solid var(--btn-border-color);
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  font-family: var(--nui-font-family-sans);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  line-height: 1.5;
+  
+  &:disabled, &--loading {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &--block {
+    display: flex;
+    width: 100%;
+  }
+
+  // Sizes
   &--sm {
-    padding: var(--nui-spacing-1) var(--nui-spacing-3);
-    font-size: var(--nui-font-size-sm);
+    --btn-padding: var(--nui-spacing-1) var(--nui-spacing-3);
+    --btn-font-size: var(--nui-font-size-sm);
   }
 
   &--md {
-    padding: var(--nui-spacing-2) var(--nui-spacing-4);
-    font-size: var(--nui-font-size-base);
+    --btn-padding: var(--nui-spacing-2) var(--nui-spacing-4);
+    --btn-font-size: var(--nui-font-size-base);
   }
 
   &--lg {
-    padding: var(--nui-spacing-3) var(--nui-spacing-6);
-    font-size: var(--nui-font-size-lg);
+    --btn-padding: var(--nui-spacing-3) var(--nui-spacing-6);
+    --btn-font-size: var(--nui-font-size-lg);
   }
 
-  /* Variants */
+  // Variants
   &--primary {
-    background-color: var(--nui-color-primary-600);
-    color: white;
+    --btn-bg: var(--nui-color-primary-600);
+    --btn-color: white;
+    --btn-hover-bg: var(--nui-color-primary-700);
+    --btn-hover-color: white;
 
     &:hover:not(:disabled) {
-      background-color: var(--nui-color-primary-700);
+      background-color: var(--btn-hover-bg);
+      color: var(--btn-hover-color);
     }
   }
 
   &--secondary {
-    background-color: var(--nui-color-neutral-200);
-    color: var(--nui-color-neutral-900);
+    --btn-bg: var(--nui-color-neutral-200);
+    --btn-color: var(--nui-color-neutral-900);
+    --btn-hover-bg: var(--nui-color-neutral-300);
+    --btn-hover-color: var(--nui-color-neutral-900);
 
     &:hover:not(:disabled) {
-      background-color: var(--nui-color-neutral-300);
+      background-color: var(--btn-hover-bg);
+      color: var(--btn-hover-color);
     }
   }
 
   &--outline {
-    background-color: transparent;
-    border-color: var(--nui-color-neutral-300);
-    color: var(--nui-color-neutral-700);
+    --btn-bg: transparent;
+    --btn-border-color: var(--nui-color-neutral-300);
+    --btn-color: var(--nui-color-neutral-700);
+    --btn-hover-bg: var(--nui-color-neutral-50);
+    --btn-hover-color: var(--nui-color-neutral-900);
 
     &:hover:not(:disabled) {
-      background-color: var(--nui-color-neutral-50);
-      color: var(--nui-color-neutral-900);
+      background-color: var(--btn-hover-bg);
+      color: var(--btn-hover-color);
+      border-color: var(--btn-border-color);
     }
   }
 
   &--ghost {
-    background-color: transparent;
-    color: var(--nui-color-neutral-700);
+    --btn-bg: transparent;
+    --btn-color: var(--nui-color-neutral-700);
+    --btn-hover-bg: var(--nui-color-neutral-100);
+    --btn-hover-color: var(--nui-color-neutral-900);
 
     &:hover:not(:disabled) {
-      background-color: var(--nui-color-neutral-100);
-      color: var(--nui-color-neutral-900);
+      background-color: var(--btn-hover-bg);
+      color: var(--btn-hover-color);
     }
   }
+  
+  &__spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    
+    svg {
+      width: 1.25em;
+      height: 1.25em;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
