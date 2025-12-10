@@ -1,0 +1,43 @@
+<div style="padding: 2rem; font-family: sans-serif;">
+  <h1>Nimbus UI Demo</h1>
+
+  <section style="margin-bottom: 2rem;">
+    <h2>Buttons</h2>
+    
+    <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+      <button lib-button>Default</button>
+      <button lib-button variant="secondary">Secondary</button>
+      <button lib-button variant="outline">Outline</button>
+      <button lib-button variant="ghost">Ghost</button>
+    </div>
+
+    <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+      <button lib-button size="sm">Small</button>
+      <button lib-button size="md">Medium</button>
+      <button lib-button size="lg">Large</button>
+    </div>
+
+    <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+      <button lib-button [loading]="isLoading" (click)="toggleLoading()">
+        {{ isLoading ? 'Loading...' : 'Click to Load' }}
+      </button>
+      <button lib-button disabled>Disabled</button>
+    </div>
+
+    <div style="margin-bottom: 1rem;">
+      <button lib-button [block]="true">Block Button</button>
+    </div>
+
+    <h3>Custom Overrides</h3>
+    <div style="display: flex; gap: 1rem; align-items: center;">
+      <button lib-button style="--btn-bg: #e11d48; --btn-color: white;">
+        Red Button
+      </button>
+      <button lib-button style="--btn-radius: 999px; --btn-bg: #4f46e5; --btn-color: white;">
+        Pill Button
+      </button>
+    </div>
+  </section>
+</div>
+
+<router-outlet />

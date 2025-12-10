@@ -9,7 +9,7 @@
     "noImplicitReturns": true,
     "paths": {
       "nimbus-ui": [
-        "./dist/nimbus-ui"
+        "./projects/nimbus-ui/src/public-api.ts"
       ]
     },
     "noFallthroughCasesInSwitch": true,
@@ -33,6 +33,12 @@
     },
     {
       "path": "./projects/nimbus-ui/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/demo-app/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/demo-app/tsconfig.spec.json"
     }
   ]
 }
