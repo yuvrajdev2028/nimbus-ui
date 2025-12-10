@@ -1,4 +1,4 @@
-import { Component, Input, Inject, Optional } from '@angular/core';
+import { Component, Input, Inject, Optional, booleanAttribute } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NIMBUS_CONFIG, NimbusConfig } from '../core/config';
 
@@ -22,9 +22,10 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
 export class Button {
   @Input() variant: ButtonVariant = 'primary';
   @Input() size: ButtonSize = 'md';
-  @Input() disabled = false;
-  @Input() loading = false;
-  @Input() block = false;
+  // transform: booleanAttribute allows usage as <button disabled> instead of <button [disabled]="true">
+  @Input({ transform: booleanAttribute }) disabled = false;
+  @Input({ transform: booleanAttribute }) loading = false;
+  @Input({ transform: booleanAttribute }) block = false;
 
   constructor(@Optional() @Inject(NIMBUS_CONFIG) config: NimbusConfig | null) {
     if (config?.button) {
