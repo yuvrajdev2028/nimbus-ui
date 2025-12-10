@@ -1,18 +1,18 @@
-@import '../styles/tokens';
+@import '../styles/variables';
 
 :host {
   display: inline-flex;
   vertical-align: middle;
 }
 
-.nui-btn {
+:host.nui-btn {
   // Local variables with defaults
   --btn-bg: transparent;
   --btn-color: inherit;
   --btn-border-color: transparent;
   --btn-padding: 0;
-  --btn-radius: var(--nui-radius-md);
-  --btn-font-size: var(--nui-font-size-base);
+  --btn-radius: var(--nui-radius-md, #{$nui-radius-md});
+  --btn-font-size: var(--nui-font-size-base, #{$nui-font-size-base});
   --btn-font-weight: 500;
   --btn-hover-bg: transparent;
   --btn-hover-color: inherit;
@@ -29,7 +29,7 @@
   border: 1px solid var(--btn-border-color);
   padding: var(--btn-padding);
   border-radius: var(--btn-radius);
-  font-family: var(--nui-font-family-sans);
+  font-family: var(--nui-font-family-sans, #{$nui-font-family-sans});
   font-size: var(--btn-font-size);
   font-weight: var(--btn-font-weight);
   
@@ -50,25 +50,25 @@
 
   // Sizes
   &--sm {
-    --btn-padding: var(--nui-spacing-1) var(--nui-spacing-3);
-    --btn-font-size: var(--nui-font-size-sm);
+    --btn-padding: var(--nui-spacing-1, #{$nui-spacing-1}) var(--nui-spacing-3, #{$nui-spacing-3});
+    --btn-font-size: var(--nui-font-size-sm, #{$nui-font-size-sm});
   }
 
   &--md {
-    --btn-padding: var(--nui-spacing-2) var(--nui-spacing-4);
-    --btn-font-size: var(--nui-font-size-base);
+    --btn-padding: var(--nui-spacing-2, #{$nui-spacing-2}) var(--nui-spacing-4, #{$nui-spacing-4});
+    --btn-font-size: var(--nui-font-size-base, #{$nui-font-size-base});
   }
 
   &--lg {
-    --btn-padding: var(--nui-spacing-3) var(--nui-spacing-6);
-    --btn-font-size: var(--nui-font-size-lg);
+    --btn-padding: var(--nui-spacing-3, #{$nui-spacing-3}) var(--nui-spacing-6, #{$nui-spacing-6});
+    --btn-font-size: var(--nui-font-size-lg, #{$nui-font-size-lg});
   }
 
   // Variants
   &--primary {
-    --btn-bg: var(--nui-color-primary-600);
+    --btn-bg: var(--nui-color-primary-600, #{$nui-color-primary-600});
     --btn-color: white;
-    --btn-hover-bg: var(--nui-color-primary-700);
+    --btn-hover-bg: var(--nui-color-primary-700, #{$nui-color-primary-700});
     --btn-hover-color: white;
 
     &:hover:not(:disabled) {
@@ -78,10 +78,10 @@
   }
 
   &--secondary {
-    --btn-bg: var(--nui-color-neutral-200);
-    --btn-color: var(--nui-color-neutral-900);
-    --btn-hover-bg: var(--nui-color-neutral-300);
-    --btn-hover-color: var(--nui-color-neutral-900);
+    --btn-bg: var(--nui-color-neutral-200, #{$nui-color-neutral-200});
+    --btn-color: var(--nui-color-neutral-900, #{$nui-color-neutral-900});
+    --btn-hover-bg: var(--nui-color-neutral-300, #{$nui-color-neutral-300});
+    --btn-hover-color: var(--nui-color-neutral-900, #{$nui-color-neutral-900});
 
     &:hover:not(:disabled) {
       background-color: var(--btn-hover-bg);
@@ -91,10 +91,10 @@
 
   &--outline {
     --btn-bg: transparent;
-    --btn-border-color: var(--nui-color-neutral-300);
-    --btn-color: var(--nui-color-neutral-700);
-    --btn-hover-bg: var(--nui-color-neutral-50);
-    --btn-hover-color: var(--nui-color-neutral-900);
+    --btn-border-color: var(--nui-color-neutral-300, #{$nui-color-neutral-300});
+    --btn-color: var(--nui-color-neutral-700, #{$nui-color-neutral-700});
+    --btn-hover-bg: var(--nui-color-neutral-50, #{$nui-color-neutral-50});
+    --btn-hover-color: var(--nui-color-neutral-900, #{$nui-color-neutral-900});
 
     &:hover:not(:disabled) {
       background-color: var(--btn-hover-bg);
@@ -105,9 +105,9 @@
 
   &--ghost {
     --btn-bg: transparent;
-    --btn-color: var(--nui-color-neutral-700);
-    --btn-hover-bg: var(--nui-color-neutral-100);
-    --btn-hover-color: var(--nui-color-neutral-900);
+    --btn-color: var(--nui-color-neutral-700, #{$nui-color-neutral-700});
+    --btn-hover-bg: var(--nui-color-neutral-100, #{$nui-color-neutral-100});
+    --btn-hover-color: var(--nui-color-neutral-900, #{$nui-color-neutral-900});
 
     &:hover:not(:disabled) {
       background-color: var(--btn-hover-bg);
