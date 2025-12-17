@@ -9,7 +9,7 @@ Non-component tasks required for a successful v1 release, ordered chronologicall
 _Tasks to set up early and maintain throughout development._
 
 - [x] **LICENSE**: Add an open-source license (MIT, Apache 2.0, etc.).
-- [ ] **README.md**: Create a polished README with badges, quick start, and feature highlights.
+- [x] **README.md**: Create a polished README with badges, quick start, and feature highlights.
 - [ ] **CONTRIBUTING.md**: Guidelines for contributors.
 - [x] **CHANGELOG.md**: Start maintaining a changelog from the beginning.
 - [x] **Semantic Versioning Strategy**: Define versioning approach (major/minor/patch).
