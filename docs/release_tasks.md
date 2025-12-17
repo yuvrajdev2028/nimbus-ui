@@ -12,7 +12,7 @@ _Tasks to set up early and maintain throughout development._
 - [ ] **README.md**: Create a polished README with badges, quick start, and feature highlights.
 - [ ] **CONTRIBUTING.md**: Guidelines for contributors.
 - [ ] **CHANGELOG.md**: Start maintaining a changelog from the beginning.
-- [ ] **Semantic Versioning Strategy**: Define versioning approach (major/minor/patch).
+- [x] **Semantic Versioning Strategy**: Define versioning approach (major/minor/patch).
 
 ---
 
